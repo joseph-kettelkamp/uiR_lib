@@ -15,8 +15,9 @@ namespace uiRobotics {
 
 class BindableObj {
 public:
-	BindableObj();
+	BindableObj(string name);
 	void SetPortAndAddress(string address, unsigned short port);
+	const char* getName(void);
 
 	virtual ~BindableObj();
 
@@ -29,6 +30,7 @@ protected:
 	virtual void SendMsgTo(char* address, void* msg);
 private:
 	TCPSocket* c_MsgClientTCP_Socket;
+	std::string m_Name;
 };
 
 } /* namespace uiRobotics */

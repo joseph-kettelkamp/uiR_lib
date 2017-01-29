@@ -16,6 +16,14 @@
 #include <cstdlib>
 #include <iostream>
 #include <map>
+#include <stdio.h>
+#include <unistd.h>
+
+struct BoundObject
+{
+	BindableObj* obj;
+	TCPSocket* socket;
+};
 
 class Device : public uiRobotics::IDevice{
 public:
@@ -26,12 +34,14 @@ public:
 	virtual void Release(void);
 	virtual void Start(void);
 	virtual void Bind(uiRobotics::BindableObj* obj);
+	virtual void shutDown(void);
 	virtual void Stop(void);
 	// end
 
 	virtual ~Device(void);
 protected:
 	virtual void msgSenderLoop(void);
+	virtual bool isSendBackGood(std::string sendBack);
 
 private:
 	std::atomic<bool> m_Running;

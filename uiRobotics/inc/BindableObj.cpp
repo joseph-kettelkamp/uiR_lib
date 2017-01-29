@@ -9,11 +9,17 @@
 
 namespace uiRobotics {
 
-BindableObj::BindableObj()
+BindableObj::BindableObj(std::string name)
 	: c_MsgClientTCP_Socket(nullptr)
+	, m_Name(name)
 {
 
 
+}
+
+const char* getName()
+{
+	return m_Name.c_str();
 }
 
 BindableObj::~BindableObj()
