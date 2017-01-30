@@ -20,6 +20,7 @@ namespace uiRobotics
 		virtual void Release(void);
 		virtual void Start(void);
 		virtual void Bind(BindableObj* obj);
+		virtual void SetServerPort(unsigned short port);
 		virtual void Stop(void);
 	protected:
 		~IDevice(void){}
