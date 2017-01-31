@@ -31,6 +31,7 @@ protected:
 private:
 	TCPSocket* c_MsgClientTCP_Socket;
 	std::string m_Name;
+	std::thread*
 };
 
 } /* namespace uiRobotics */

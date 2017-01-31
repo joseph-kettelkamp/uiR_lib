@@ -17,7 +17,7 @@ BindableObj::BindableObj(std::string name)
 
 }
 
-const char* getName()
+const char* BindableObj::getName()
 {
 	return m_Name.c_str();
 }
